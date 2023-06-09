@@ -1,0 +1,52 @@
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="heroes.js"></script>
+<script type="text/javascript" src="calc.js"></script>
+<style type="text/css">
+.int-glow {
+	filter: drop-shadow(0 0 0.3rem rgb(0, 0, 255));
+}
+.str-glow {
+	filter: drop-shadow(0 0 0.3rem rgb(255, 0, 0));
+}
+.agi-glow {
+	filter: drop-shadow(0 0 0.3rem rgb(0, 255, 0));
+}
+.uni-glow {
+	filter: drop-shadow(0 0 0.3rem rgb(255, 255, 0));
+}
+.hero_icon{
+	height: 20px;
+	width: 20px;
+	margin: 2px;
+}
+#formula_input{
+ width: 900px;
+ font-size: 16px;
+}
+#all_heroes > img {
+	height: 10px;
+	width: 10px;
+}
+#all_heroes {
+	margin-bottom:20px;
+}
+</style>
+<div id="all_heroes">
+</div>
+Formula: <input type="text" id="formula_input" value="({attack_damage_min} + {attack_damage_max} + {damage_base} * 2 + {damage_gain} * 2 * ({level} -1)) / 2"> <br>
+Level: <input type="number" id="level_input" min="1" max="30" value="1"><br>
+<table class="results">
+<tr>
+	<th>Formula Value</th>
+	<th>Heroes</th>
+</tr>
+<tbody id="result"></tbody>
+</table>
+
+<h3>Stats</h3>
+<div id="stats">
+</div>
+
+<script type="text/javascript">
+	SetUp();
+</script>
